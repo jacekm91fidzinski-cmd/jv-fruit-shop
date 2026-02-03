@@ -1,5 +1,4 @@
 package strategy;
-
 import db.Storage;
 import model.FruitTransaction;
 import service.OperationHandler;
