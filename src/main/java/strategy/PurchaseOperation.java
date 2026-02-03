@@ -13,7 +13,7 @@ public class PurchaseOperation implements OperationHandler {
         int result = current - transaction.getQuantity();
 
         if (result < 0) {
-            throw new RuntimeException(
+            throw new IllegalStateException(
                     "Not enough fruits: " + transaction.getFruit());
         }
         Storage.getFruits().put(transaction.getFruit(), result);

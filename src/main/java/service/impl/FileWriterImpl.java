@@ -12,7 +12,7 @@ public class FileWriterImpl implements FileWriter {
         try {
             Files.write(Path.of(filePath), content.getBytes());
         } catch (IOException e) {
-            throw new RuntimeException("Can't write file: " + filePath, e);
+            throw new IllegalStateException("Can't write file: " + filePath, e);
         }
     }
 }

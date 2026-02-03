@@ -11,20 +11,24 @@ public class FileReaderImpl implements FileReader {
     @Override
     public List<String> read(String filePath) {
         if (filePath == null) {
-            throw new RuntimeException("File path cannot be null");
+            throw new IllegalArgumentException("File path cannot be null");
         }
 
         List<String> lines = new ArrayList<>();
         try (BufferedReader reader =
                      new BufferedReader(new java.io.FileReader(filePath))) {
 
-            reader.readLine(); // skip header
+            String header = reader.readLine();
+            if (header == null) {
+                return lines;
+            }
+
             String line;
             while ((line = reader.readLine()) != null) {
                 lines.add(line);
             }
         } catch (IOException e) {
-            throw new RuntimeException("Can't read file: " + filePath, e);
+            throw new IllegalStateException("Can't read file: " + filePath, e);
         }
         return lines;
     }

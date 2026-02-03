@@ -8,7 +8,7 @@ public class ReportGeneratorImpl implements ReportGenerator {
     @Override
     public String getReport(Map<String, Integer> fruitData) {
         if (fruitData == null) {
-            throw new RuntimeException("Fruit data cannot be null");
+            throw new IllegalArgumentException("Fruit data cannot be null");
         }
 
         StringBuilder builder = new StringBuilder("fruit,quantity\n");

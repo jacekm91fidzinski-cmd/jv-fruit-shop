@@ -13,7 +13,7 @@ public class ShopServiceImpl implements ShopService {
 
     public ShopServiceImpl(OperationStrategy strategy) {
         if (strategy == null) {
-            throw new RuntimeException("Strategy cannot be null");
+            throw new IllegalArgumentException("Strategy cannot be null");
         }
         this.strategy = strategy;
     }
@@ -21,9 +21,10 @@ public class ShopServiceImpl implements ShopService {
     @Override
     public Map<String, Integer> process(List<FruitTransaction> transactions) {
         if (transactions == null) {
-            throw new RuntimeException("Transactions cannot be null");
+            throw new IllegalArgumentException("Transactions cannot be null");
         }
 
+        Storage.clear();
         for (FruitTransaction transaction : transactions) {
             strategy.handle(transaction);
         }

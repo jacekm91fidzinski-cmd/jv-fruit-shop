@@ -22,11 +22,11 @@ import strategy.SupplyOperation;
 
 public class Main {
     public static void main(String[] args) {
-
         FileReader reader = new FileReaderImpl();
         DataConverter converter = new DataConverterImpl();
 
-        Map<FruitTransaction.Operation, OperationHandler> handlers = new HashMap<>();
+        Map<FruitTransaction.Operation, OperationHandler> handlers =
+                new HashMap<>();
         handlers.put(FruitTransaction.Operation.BALANCE, new BalanceOperation());
         handlers.put(FruitTransaction.Operation.SUPPLY, new SupplyOperation());
         handlers.put(FruitTransaction.Operation.PURCHASE, new PurchaseOperation());
