@@ -1,20 +1,11 @@
-import service.FileReader;
-import service.FileWriter;
-import service.DataConverter;
-import service.ShopService;
-import service.ReportGenerator;
-import service.OperationHandler;
-
-import service.impl.FileReaderImpl;
-import service.impl.FileWriterImpl;
-import service.impl.DataConverterImpl;
-import service.impl.ShopServiceImpl;
-import service.impl.ReportGeneratorImpl;
-
-import strategy.*;
 import model.FruitTransaction;
+import service.*;
+import service.impl.*;
+import strategy.*;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {

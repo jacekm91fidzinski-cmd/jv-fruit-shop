@@ -1,7 +1,7 @@
 package service.impl;
 
-import service.ReportGenerator;
 import db.Storage;
+import service.ReportGenerator;
 
 import java.util.Map;
 

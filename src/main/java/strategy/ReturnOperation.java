@@ -1,8 +1,8 @@
 package strategy;
 
-import service.OperationHandler;
 import db.Storage;
 import model.FruitTransaction;
+import service.OperationHandler;
 
 public class ReturnOperation implements OperationHandler {
     @Override

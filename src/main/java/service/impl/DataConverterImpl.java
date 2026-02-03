@@ -1,7 +1,7 @@
 package service.impl;
 
-import service.DataConverter;
 import model.FruitTransaction;
+import service.DataConverter;
 
 import java.util.List;
 import java.util.stream.Collectors;
