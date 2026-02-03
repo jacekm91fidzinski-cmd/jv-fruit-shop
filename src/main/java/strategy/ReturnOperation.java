@@ -11,6 +11,7 @@ public class ReturnOperation implements OperationHandler {
                 .merge(
                         transaction.getFruit(),
                         transaction.getQuantity(),
-                        Integer::sum);
+                        Integer::sum
+                );
     }
 }
