@@ -28,8 +28,7 @@ public class Main {
     public static void main(String[] args) {
 
         FileReader reader = new FileReaderImpl();
-
-        final DataConverter converter = new DataConverterImpl();
+        DataConverter converter = new DataConverterImpl();
 
         Map<FruitTransaction.Operation, OperationHandler> handlers = new HashMap<>();
         handlers.put(FruitTransaction.Operation.BALANCE, new BalanceOperation());
@@ -41,10 +40,11 @@ public class Main {
         ShopService shopService = new ShopServiceImpl(strategy);
 
         List<String> lines = reader.read("input.csv");
-        shopService.process(converter.convertToTransaction(lines));
+        Map<String, Integer> result =
+                shopService.process(converter.convertToTransaction(lines));
 
         ReportGenerator generator = new ReportGeneratorImpl();
         FileWriter writer = new FileWriterImpl();
-        writer.write(generator.getReport(), "output.csv");
+        writer.write(generator.getReport(result), "output.csv");
     }
 }

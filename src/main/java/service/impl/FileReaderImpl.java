@@ -1,16 +1,20 @@
 package service.impl;
 
-import service.FileReader;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import service.FileReader;
+
 public class FileReaderImpl implements FileReader {
 
     @Override
     public List<String> read(String filePath) {
+        if (filePath == null) {
+            throw new RuntimeException("File path cannot be null");
+        }
+
         List<String> lines = new ArrayList<>();
         try (BufferedReader reader =
                      new BufferedReader(new java.io.FileReader(filePath))) {

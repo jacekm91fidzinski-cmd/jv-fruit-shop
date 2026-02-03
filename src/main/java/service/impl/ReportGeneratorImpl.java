@@ -1,16 +1,19 @@
 package service.impl;
 
-import db.Storage;
-import service.ReportGenerator;
-
 import java.util.Map;
+
+import service.ReportGenerator;
 
 public class ReportGeneratorImpl implements ReportGenerator {
 
     @Override
-    public String getReport() {
+    public String getReport(Map<String, Integer> fruitData) {
+        if (fruitData == null) {
+            throw new RuntimeException("Fruit data cannot be null");
+        }
+
         StringBuilder builder = new StringBuilder("fruit,quantity\n");
-        for (Map.Entry<String, Integer> entry : Storage.getFruits().entrySet()) {
+        for (Map.Entry<String, Integer> entry : fruitData.entrySet()) {
             builder.append(entry.getKey())
                     .append(",")
                     .append(entry.getValue())

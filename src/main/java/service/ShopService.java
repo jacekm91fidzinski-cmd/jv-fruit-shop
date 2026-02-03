@@ -1,9 +1,9 @@
 package service;
 
+import java.util.List;
+import java.util.Map;
 import model.FruitTransaction;
 
-import java.util.List;
-
 public interface ShopService {
-    void process(List<FruitTransaction> transactions);
+    Map<String, Integer> process(List<FruitTransaction> transactions);
 }
