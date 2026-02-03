@@ -5,10 +5,10 @@ public class FruitTransaction {
     private String fruit;
     private int quantity;
 
-    public FruitTransaction(Operation operation, String fruit, int quanity) {
+    public FruitTransaction(Operation operation, String fruit, int quantity) {
         this.operation = operation;
         this.fruit = fruit;
-        this.quantity = quanity;
+        this.quantity = quantity;
     }
 
     public Operation getOperation() {
@@ -19,7 +19,7 @@ public class FruitTransaction {
         return fruit;
     }
 
-    public int getQuanity() {
+    public int getQuantity() {
         return quantity;
     }
 

@@ -10,7 +10,7 @@ public class SupplyOperation implements OperationHandler {
         Storage.getFruits()
                 .merge(
                         transaction.getFruit(),
-                        transaction.getQuanity(),
+                        transaction.getQuantity(),
                         Integer::sum
                 );
     }
