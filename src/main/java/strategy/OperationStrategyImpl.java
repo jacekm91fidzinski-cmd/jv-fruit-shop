@@ -1,4 +1,5 @@
 package strategy;
+
 import java.util.Map;
 import model.FruitTransaction;
 import service.OperationHandler;
