@@ -1,7 +1,6 @@
 package service.impl;
 
 import java.util.Map;
-
 import service.ReportGenerator;
 
 public class ReportGeneratorImpl implements ReportGenerator {

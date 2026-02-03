@@ -1,22 +1,18 @@
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import model.FruitTransaction;
-
 import service.DataConverter;
 import service.FileReader;
 import service.FileWriter;
 import service.OperationHandler;
 import service.ReportGenerator;
 import service.ShopService;
-
 import service.impl.DataConverterImpl;
 import service.impl.FileReaderImpl;
 import service.impl.FileWriterImpl;
 import service.impl.ReportGeneratorImpl;
 import service.impl.ShopServiceImpl;
-
 import strategy.BalanceOperation;
 import strategy.OperationStrategy;
 import strategy.OperationStrategyImpl;

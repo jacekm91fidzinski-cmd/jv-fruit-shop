@@ -2,7 +2,6 @@ package service.impl;
 
 import java.util.List;
 import java.util.Map;
-
 import db.Storage;
 import model.FruitTransaction;
 import service.ShopService;
