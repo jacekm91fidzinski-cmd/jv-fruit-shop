@@ -1,6 +1,6 @@
-package service;
+package basesyntax.service;
 
-import model.FruitTransaction;
+import basesyntax.model.FruitTransaction;
 
 public interface OperationHandler {
     void apply(FruitTransaction transaction);

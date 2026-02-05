@@ -1,8 +1,8 @@
-package strategy;
+package basesyntax.strategy;
 
-import db.Storage;
-import model.FruitTransaction;
-import service.OperationHandler;
+import basesyntax.db.Storage;
+import basesyntax.model.FruitTransaction;
+import basesyntax.service.OperationHandler;
 
 public class BalanceOperation implements OperationHandler {
 

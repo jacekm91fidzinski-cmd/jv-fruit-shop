@@ -1,10 +1,10 @@
-package service.impl;
+package basesyntax.service.impl;
 
+import basesyntax.service.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import service.FileReader;
 
 public class FileReaderImpl implements FileReader {
 
@@ -15,21 +15,22 @@ public class FileReaderImpl implements FileReader {
         }
 
         List<String> lines = new ArrayList<>();
+
         try (BufferedReader reader =
                      new BufferedReader(new java.io.FileReader(filePath))) {
 
-            String header = reader.readLine();
-            if (header == null) {
-                return lines;
-            }
+            reader.readLine();
 
             String line;
             while ((line = reader.readLine()) != null) {
-                lines.add(line);
+                if (!line.isBlank()) {
+                    lines.add(line);
+                }
             }
         } catch (IOException e) {
             throw new IllegalStateException("Can't read file: " + filePath, e);
         }
+
         return lines;
     }
 }
