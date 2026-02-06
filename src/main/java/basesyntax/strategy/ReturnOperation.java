@@ -8,11 +8,10 @@ public class ReturnOperation implements OperationHandler {
 
     @Override
     public void apply(FruitTransaction transaction) {
-        Storage.getFruits()
-                .merge(
-                        transaction.getFruit(),
-                        transaction.getQuantity(),
-                        Integer::sum
-                );
+        Storage.getFruits().put(
+                transaction.getFruit(),
+                Storage.getFruits().getOrDefault(transaction.getFruit(), 0)
+                        + transaction.getQuantity()
+        );
     }
 }

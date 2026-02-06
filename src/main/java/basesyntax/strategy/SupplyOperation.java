@@ -8,11 +8,12 @@ public class SupplyOperation implements OperationHandler {
 
     @Override
     public void apply(FruitTransaction transaction) {
-        Storage.getFruits()
-                .merge(
-                        transaction.getFruit(),
-                        transaction.getQuantity(),
-                        Integer::sum
-                );
+        String fruit = transaction.getFruit();
+        int quantity = transaction.getQuantity();
+
+        Storage.getFruits().put(
+                fruit,
+                Storage.getFruits().getOrDefault(fruit, 0) + quantity
+        );
     }
 }
